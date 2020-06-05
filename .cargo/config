@@ -1,0 +1,12 @@
+[target.thumbv7m-none-eabi]
+runner = 'arm-none-eabi-gdb'
+rustflags = [
+  "-C", "link-arg=-Tlink.x",
+]
+
+[build]
+target = "thumbv7m-none-eabi"
+
+[alias]
+r = ["build", "--", "./program.sh ./target/thumbv7m-none-eabi/debug/blink"]
+rr = ["build --release", "--", "./program.sh ./target/thumbv7m-none-eabi/release/blink"]
