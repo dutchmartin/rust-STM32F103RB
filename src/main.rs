@@ -1,10 +1,3 @@
-//! Blinks an LED
-//!
-//! This assumes that a LED is connected to pc13 as is the case on the blue pill board.
-//!
-//! Note: Without additional hardware, PC13 should not be used to drive an LED, see page 5.1.2 of
-//! the reference manual for an explanation. This is not an issue on the blue pill.
-
 #![deny(unsafe_code)]
 #![no_std]
 #![no_main]
@@ -36,8 +29,8 @@ fn main() -> ! {
     // Acquire the GPIOC peripheral
     let mut gpioa = dp.GPIOA.split(&mut rcc.apb2);
 
-    // Configure gpio C pin 13 as a push-pull output. The `crh` register is passed to the function
-    // in order to configure the port. For pins 0-7, crl should be passed instead.
+    // Configure gpio A pin 5 as a push-pull output. The `crl` register is passed to the function
+    // in order to configure the port.
     let mut led = gpioa.pa5.into_push_pull_output(&mut gpioa.crl);
     // Configure the syst timer to trigger an update every second
     let mut timer = Timer::syst(cp.SYST, &clocks).start_count_down(1.hz());

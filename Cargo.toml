@@ -1,5 +1,5 @@
 [package]
-name = "blink"
+name = "Nucleo-F103RB-template"
 version = "0.1.0"
 authors = ["dutchmartin <martijn.groeneveldt@gmail.com>"]
 edition = "2018"
