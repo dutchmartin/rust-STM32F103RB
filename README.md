@@ -6,3 +6,5 @@ Includes:
 To use this template you need:
 - the rust compiler
 - gdb
+
+For flashing the debug and release version of your code, use the `debug.sh` and the `release.sh`.
